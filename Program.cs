@@ -27,7 +27,7 @@ while(continuar)
             Console.WriteLine("Digite a placa do veiculo para remover:");
             string placaRemover = Console.ReadLine();
             Console.WriteLine("Digite a quantidade horas que o veiculo permaneceu estaciodo:");
-            int quantidadeHoras = int.Parse(Console.ReadLine());
+            decimal quantidadeHoras = decimal.Parse(Console.ReadLine());
 
             estacionamento.RemoverVeiculo(placaRemover, quantidadeHoras);
 

@@ -9,8 +9,8 @@ namespace DesafioEstacionamento.Model
     {
         // criando uma lista como atributo, sendo ela do tipo Carro para armazenarmos nossos carros
         private List<Carro> carros = new List<Carro>();
-        private int valorTaxaFixa = 5;
-        private int valorTaxaHora = 2;
+        private decimal valorTaxaFixa = 5M;
+        private decimal valorTaxaHora = 2M;
 
         public void CadastrarVeiculo(string placa)
         {
@@ -32,7 +32,7 @@ namespace DesafioEstacionamento.Model
 
         }
 
-        public void RemoverVeiculo(string placa, int quantidadeHoras)
+        public void RemoverVeiculo(string placa, decimal quantidadeHoras)
         {
 
             Carro veiculo;
@@ -54,9 +54,9 @@ namespace DesafioEstacionamento.Model
             }
         }
 
-        public int CalcularTaxa(int quantidadeHoras){
+        public decimal CalcularTaxa(decimal quantidadeHoras){
 
-            int valorTotal = valorTaxaFixa + (valorTaxaHora * quantidadeHoras);
+            decimal valorTotal = valorTaxaFixa + (valorTaxaHora * quantidadeHoras);
             return valorTotal;
 
         }
