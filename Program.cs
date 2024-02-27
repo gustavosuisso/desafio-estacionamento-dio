@@ -1,2 +1,63 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using DesafioEstacionamento.Model;
+
+Estacionamento estacionamento = new Estacionamento();
+string opcao = null;
+string continuar = null;
+
+
+while(opcao != "4")
+{
+    Console.WriteLine("Digite a sua opção:");
+    Console.WriteLine("1 - Cadastrar veiculo \n2 - Remover veiculo \n3 - Listar veiculos \n4 - Encerrar");
+    opcao = Console.ReadLine();
+
+    switch(opcao){
+
+        case "1":
+
+            Console.WriteLine("Digite a placa do veiculo para estacionar: ");
+            string placaCadastro = Console.ReadLine();
+
+            estacionamento.CadastrarVeiculo(placaCadastro);
+
+            break;
+        
+        case "2":
+
+            Console.WriteLine("Digite a placa do veiculo para remover:");
+            string placaRemover = Console.ReadLine();
+            Console.WriteLine("Digite a quantidade horas que o veiculo permaneceu estaciodo:");
+            int quantidadeHoras = int.Parse(Console.ReadLine());
+
+            estacionamento.RemoverVeiculo(placaRemover, quantidadeHoras);
+
+            break;
+        
+        case "3":
+
+            Console.WriteLine("Veiculos estacionados: ");
+            estacionamento.ListarVeiculos();
+            
+            break;
+
+        case "4": 
+
+            Console.WriteLine("Encerrando programa.");
+            break;
+
+        default:
+
+            Console.WriteLine("Opção inválida.");
+            break;
+
+    }
+
+
+    if(opcao != "4")
+    {
+        Console.WriteLine("Pressione uma tecla para continuar: ");
+        continuar = Console.ReadLine();
+        Console.Clear();
+    }
+
+}

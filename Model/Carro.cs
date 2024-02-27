@@ -16,7 +16,7 @@ namespace DesafioEstacionamento.Model
         public string Placa 
         {
 
-            get => _placa.ToUpper(); // usando body expressions para abreviar o get
+            get => _placa; // usando body expressions para abreviar o get
 
             set
             {
@@ -30,6 +30,17 @@ namespace DesafioEstacionamento.Model
                 }
             }
 
+        }
+
+
+        public Carro(){
+
+        }
+
+        // construtor para passarmos um número da placa ao instanciarmos o objeto
+        public Carro(string numeroPlaca)
+        {
+            Placa = numeroPlaca;
         }
     }
 }
