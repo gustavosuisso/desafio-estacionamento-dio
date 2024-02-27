@@ -39,17 +39,19 @@ namespace DesafioEstacionamento.Model
             for(int i = 0; i < carros.Count(); i++)
             {
 
-                if(carros[i].Placa == placa)
-                {
+                
+                    if(carros[i].Placa == placa)
+                    {
+                        string numeroPlaca = carros[i].Placa;
+                        bool removeu = carros.Remove(carros[i]);
+                        if(removeu){
 
-                    bool removeu = carros.Remove(carros[i]);
-                    if(removeu){
+                            Console.WriteLine($"O veiculo com a placa {numeroPlaca} foi removido e o preço total foi " 
+                            + $"de: {CalcularTaxa(quantidadeHoras)}");
 
-                        Console.WriteLine($"O veiculo com a placa {carros[i].Placa} foi removido e o preço total foi " 
-                        + $"de: {CalcularTaxa(quantidadeHoras)}");
-
+                        }
                     }
-                }
+                
 
             }
         }
