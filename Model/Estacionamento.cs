@@ -12,16 +12,23 @@ namespace DesafioEstacionamento.Model
         private decimal valorTaxaFixa = 5M;
         private decimal valorTaxaHora = 2M;
 
-        public void CadastrarVeiculo(string placa)
+        public void CadastrarVeiculo()
         {
 
-            Carro carro = new Carro(placa);
+            Console.WriteLine("Digite a placa do veiculo para estacionar: ");
+            string placaCadastro = Console.ReadLine();
+
+            Carro carro = new Carro(placaCadastro);
             carros.Add(carro);
+
+            Console.WriteLine("Veiculo estacionado com sucesso.");
 
         }
 
         public void ListarVeiculos()
         {
+
+            Console.WriteLine("Veiculos estacionados: ");
 
             Console.WriteLine("Listando as placas dos veiculos estacionados:");
 
@@ -32,10 +39,15 @@ namespace DesafioEstacionamento.Model
 
         }
 
-        public void RemoverVeiculo(string placa, decimal quantidadeHoras)
+        public void RemoverVeiculo()
         {
 
-            Carro veiculo;
+
+            Console.WriteLine("Digite a placa do veiculo para remover:");
+            string placa = Console.ReadLine();
+            Console.WriteLine("Digite a quantidade horas que o veiculo permaneceu estaciodo:");
+            decimal quantidadeHoras = decimal.Parse(Console.ReadLine());
+
             for(int i = 0; i < carros.Count(); i++)
             {
 

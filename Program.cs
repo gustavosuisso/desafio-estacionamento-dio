@@ -15,29 +15,17 @@ while(continuar)
 
         case "1":
 
-            Console.WriteLine("Digite a placa do veiculo para estacionar: ");
-            string placaCadastro = Console.ReadLine();
-
-            estacionamento.CadastrarVeiculo(placaCadastro);
-
+            estacionamento.CadastrarVeiculo();
             break;
         
         case "2":
 
-            Console.WriteLine("Digite a placa do veiculo para remover:");
-            string placaRemover = Console.ReadLine();
-            Console.WriteLine("Digite a quantidade horas que o veiculo permaneceu estaciodo:");
-            decimal quantidadeHoras = decimal.Parse(Console.ReadLine());
-
-            estacionamento.RemoverVeiculo(placaRemover, quantidadeHoras);
-
+            estacionamento.RemoverVeiculo();
             break;
         
         case "3":
 
-            Console.WriteLine("Veiculos estacionados: ");
             estacionamento.ListarVeiculos();
-            
             break;
 
         case "4": 
